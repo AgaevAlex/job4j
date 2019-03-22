@@ -1,5 +1,5 @@
 /**
-* Package for calculate task.
+* Package for converter task.
 *
 * @author Alex Agaev (agaevalex97@gmail.com)
 * @version $Id$
