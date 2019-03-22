@@ -5,7 +5,17 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+/**
+ * Test
+ *
+ * @author Alex Agaev (agaevalex97@gmail.com)
+ * @version $Id$
+ * @since 0.1
+ */
 public class CalculatorTest {
+    /**
+     * Test add
+     */
     @Test
     public void whenAddOnePlusOneThenTwo() {
         Calculator calc = new Calculator();
@@ -14,6 +24,9 @@ public class CalculatorTest {
         assertThat(result, is(expected));
     }
 
+    /**
+     * Test Sub
+     */
     @Test
     public void whenSub25On5Then20() {
         Calculator calc = new Calculator();
@@ -22,6 +35,9 @@ public class CalculatorTest {
         assertThat(result, is(expected));
     }
 
+    /**
+     * Test Div
+     */
     @Test
     public void whenDiv25On5Then5() {
         Calculator calc = new Calculator();
@@ -30,6 +46,9 @@ public class CalculatorTest {
         assertThat(result, is(expected));
     }
 
+    /**
+     * Test Multiple
+     */
     @Test
     public void whenMultiple1On1Then1() {
         Calculator calc = new Calculator();
