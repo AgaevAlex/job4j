@@ -51,11 +51,11 @@ public class Triangle {
      * @param a Длина от точки a b.
      * @param b Длина от точки a c.
      * @param c Длина от точки b c.
-     * @return i
+     * @return true or false
      */
     private boolean exist(double a, double c, double b) {
 
-        return a < (b + c) && c < (a + b);
+        return a < (b + c) && c < (a + b) && b < (a + c);
 
     }
 }
