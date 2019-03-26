@@ -14,6 +14,9 @@ public class Check {
         boolean result = false;
         for (int count = 0; count < data.length - 1; count++) {
             result = data[count] == data[count + 1];
+            if (!result){
+                return result;
+            }
         }
         return result;
     }

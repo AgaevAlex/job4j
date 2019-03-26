@@ -23,6 +23,7 @@ public class CheckTest {
         boolean result = check.mono(input);
         assertThat(result, is(true));
     }
+
     /**
      * Тест, когда все элементы массива true, а последний false.
      */
@@ -45,11 +46,25 @@ public class CheckTest {
         assertThat(result, is(false));
     }
 
+    /**
+     * Тест, когда в массиве все элементы false.
+     */
     @Test
     public void allFalse() {
         Check check = new Check();
         boolean[] input = new boolean[]{false, false, false};
         boolean result = check.mono(input);
         assertThat(result, is(true));
+    }
+
+    /**
+     * Тест, когда в массиве четное количество элементов.
+     */
+    @Test
+    public void odd() {
+        Check check = new Check();
+        boolean[] input = new boolean[]{true, true, false, true};
+        boolean result = check.mono(input);
+        assertThat(result, is(false));
     }
 }
