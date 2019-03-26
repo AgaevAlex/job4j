@@ -13,6 +13,9 @@ import static org.junit.Assert.assertThat;
  * @since 0.1
  */
 public class SquareTest {
+    /**
+     * Тест, проверка заполнения массива степенями чисел.
+     */
     @Test
     public void whenBound3Then149() {
         int bound = 3;
