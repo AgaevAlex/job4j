@@ -13,9 +13,7 @@ public class Check {
     public boolean mono(boolean[] data) {
         boolean result = false;
         for (int count = 0; count < data.length - 1; count++) {
-            if (data[count] == data[count + 1]) {
-                result = data[count];
-            }
+            result = data[count] == data[count + 1];
         }
         return result;
     }
