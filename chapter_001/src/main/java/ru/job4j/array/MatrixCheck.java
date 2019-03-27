@@ -16,7 +16,9 @@ public class MatrixCheck {
             result = data[count][count] == data[count + 1][count + 1];
             if (!result) {
                 return false;
+
             }
+
         }
         for (int count1 = 0; count1 < data.length; count1++) {
             result = data[data.length - count1 - 1][count1] == data[data.length - 1][data.length - 1];

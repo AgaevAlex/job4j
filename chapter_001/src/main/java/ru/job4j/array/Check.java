@@ -11,12 +11,13 @@ public class Check {
      * @return Если все элементы массива являются либо true, либо false, то результат будет true, иначе false.
      */
     public boolean mono(boolean[] data) {
-        boolean result = false;
-        for (int count = 0; count < data.length - 1; count++) {
-            result = data[count] == data[count + 1];
-            if (!result){
-                return result;
+        boolean result = true;
+        for (int count = 1; count < data.length ; count++) {
+            if (data[0] !=data[count]){
+                result = false;
+                break;
             }
+
         }
         return result;
     }
