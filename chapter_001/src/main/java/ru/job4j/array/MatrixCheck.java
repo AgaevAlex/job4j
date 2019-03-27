@@ -11,24 +11,17 @@ public class MatrixCheck {
      * @return true или false в зависимости от диагоналей матрицы
      */
     public boolean mono(boolean[][] data) {
-        boolean result;
-        for (int count = 0; count < data.length - 1; count++) {
-            result = data[count][count] == data[count + 1][count + 1];
-            if (!result) {
-                return false;
-
+        boolean result = true;
+        for (int count = 0; count < data.length; count++) {
+            if (data[0][0] != data[count][count] || (data[data.length - count - 1][count] != data[0][data.length - 1])) {
+                result = false;
+                break;
             }
 
-        }
-        for (int count1 = 0; count1 < data.length; count1++) {
-            result = data[data.length - count1 - 1][count1] == data[data.length - 1][data.length - 1];
-            if (!result) {
-                return false;
-            }
 
         }
 
 
-        return true;
+        return result;
     }
 }
