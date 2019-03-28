@@ -12,9 +12,9 @@ public class Matrix {
      */
     public int[][] multiple(int size) {
         int[][] table = new int[size][size];
-        for (int i = 1; i <= size; i++) {
-            for (int y = 1; y <= size; y++) {
-                table[i - 1][y - 1] = y * i;
+        for (int out = 1; out <= size; out++) {
+            for (int in = 1; in <= size; in++) {
+                table[out - 1][in - 1] = in * out;
             }
         }
         return table;

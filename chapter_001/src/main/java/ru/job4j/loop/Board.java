@@ -13,11 +13,11 @@ public class Board {
     public String paint(int width, int height) {
         StringBuilder screen = new StringBuilder();
         String ln = System.lineSeparator();
-        for (int i = 0; i < height; i++) {
-            for (int y = 0; y < width; y++) {
+        for (int out = 0; out < height; out++) {
+            for (int in = 0; in < width; in++) {
                 // условие проверки, что писать пробел или X
                 // Выше в задании мы определили закономерность, когда нужно проставлять X
-                if (((i + y) % 2) == 0) {
+                if (((out + in) % 2) == 0) {
                     screen.append("x");
                 } else {
                     screen.append(" ");
