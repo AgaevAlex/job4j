@@ -15,9 +15,12 @@ public class TriangleTest {
     @Test
     public void whenAreaSetThreePointsThenTriangleArea() {
         // Создаем объект треугольник.
-        Triangle triangle = new Triangle();
+        Point point1 = new Point(0,0);
+        Point point2 = new Point(0,2);
+        Point point3 = new Point(2,0);
+        Triangle triangle = new Triangle(point1,point2,point3);
         // Вычисляем площадь.
-        double result = triangle.area(0, 0, 0, 2, 2, 0);
+        double result = triangle.area();
         // Задаем ожидаемый результат.
         double expected = 2D;
         //Проверяем результат и ожидаемое значение.
@@ -30,9 +33,12 @@ public class TriangleTest {
     @Test
     public void whenTriangleCanNotBeBuilt() {
         // Создаем объект треугольник.
-        Triangle triangle = new Triangle();
+        Point point1 = new Point(0,0);
+        Point point2 = new Point(2,2);
+        Point point3 = new Point(2,2);
+        Triangle triangle = new Triangle(point1,point2,point3);
         // Вычисляем площадь.
-        double result = triangle.area(0, 0, 2, 2, 2, 2);
+        double result = triangle.area();
         // Задаем ожидаемый результат.
         double expected = -1D;
         //Проверяем результат и ожидаемое значение.
