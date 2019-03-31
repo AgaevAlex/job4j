@@ -1,5 +1,8 @@
 package ru.job4j.condition;
 
+import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
+
 /**
  * Class Point для вычисления расстояния между двумя точками в системе координат.
  *
@@ -8,14 +11,37 @@ package ru.job4j.condition;
  */
 public class Point {
     /**
+     * Это поле объекта. Оно доступно только конкретному объекту.
+     */
+    private int x;
+
+    /**
+     * И это поле объекта. Оно доступно только конкретному объекту.
+     */
+    private int y;
+
+    /**
+     * Конструктор, который принимает начальное состояние объекта "точка"
+     *
+     * @param first  координата x
+     * @param second координата y
+     */
+    public Point(int first, int second) {
+        this.x = first;
+        this.y = second;
+    }
+
+    /**
      * Method add.
      *
-     * @param x1,x2,y2,y1 -args .
+     * @param that объект типа Point.
      * @return полученный результат вычислений.
      */
-    public double distance(int x1, int y1, int x2, int y2) {
-        double first = Math.pow(x2 - x1, 2);
-        double second = Math.pow(y2 - y1, 2);
-        return Math.sqrt(first + second);
+    public double distance(Point that) {
+        return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2));
+    }
+
+    public void info() {
+        System.out.println(String.format("Point[%s, %s]", this.x, this.y));
     }
 }
