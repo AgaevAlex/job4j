@@ -12,7 +12,7 @@ public class TestSortTest {
         TestSort testSort = new TestSort();
         int[] input = new int[]{1, 4};
         int[] input2 = new int[]{2, 3, 5, 6};
-        int[] result = testSort.sort(input,input2);
+        int[] result = testSort.sort(input, input2);
         int[] expect = new int[]{1, 2, 3, 4, 5, 6};
         assertThat(result, Matchers.is(expect));
 
