@@ -51,23 +51,7 @@ public class Tracker {
         return result;
     }
 
-    /**
-     * Метод, проверяющий все элементы массива this.items, сравнивая name (используя метод getName класса Item) с аргументом метода String key.
-     * Элементы, у которых совпадает name, копирует в результирующий массив и возвращает его
-     *
-     * @param key то с чем нужно сравнить name .
-     * @return исходный масив.
-     */
-    public Item[] findByName(String key) {
-        Item[] result = new Item[items.length];
-        int count2 = 0;
-        for (int count = 0; count < this.position; count++) {
-            if (items[count].getName().equals(key)) {
-                result[count2++] = items[count];
-            }
-        }
-        return Arrays.copyOf(result, count2);
-    }
+
     /**
      * Метод, удаляющий ячейку в массиве и смещающий все элементы после него на 1 ячейку влево.
      *
@@ -87,6 +71,7 @@ public class Tracker {
         }
         return result;
     }
+
     /**
      * @return возвращает копию массива this.items без null элементов;
      */
@@ -121,5 +106,23 @@ public class Tracker {
 
         }
         return result;
+    }
+
+    /**
+     * Метод, проверяющий все элементы массива this.items, сравнивая name (используя метод getName класса Item) с аргументом метода String key.
+     * Элементы, у которых совпадает name, копирует в результирующий массив и возвращает его
+     *
+     * @param key то с чем нужно сравнить name .
+     * @return исходный масив.
+     */
+    public Item[] findByName(String key) {
+        Item[] result = new Item[items.length];
+        int count2 = 0;
+        for (int count = 0; count < this.position; count++) {
+            if (items[count].getName().equals(key)) {
+                result[count2++] = items[count];
+            }
+        }
+        return Arrays.copyOf(result, count2);
     }
 }
