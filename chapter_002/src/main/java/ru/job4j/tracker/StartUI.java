@@ -54,12 +54,14 @@ public class StartUI {
                 this.createItem();
             } else if (EXIT.equals(answer)) {
                 exit = true;
+                break;
+
             } else if (SHOW.equals(answer)) {
                 this.showAllItems();
-                break;
             } else if (EDIT.equals(answer)) {
                 this.editItem();
                 break;
+
 
             } else if (DELETE.equals(answer)) {
                 this.deleteItem();
@@ -120,7 +122,8 @@ public class StartUI {
     private void showAllItems() {
         System.out.println("------------ Показать все заявки ------------");
         for (int count = 0; count < this.tracker.findAll().length; count++) {
-            System.out.println("------------ Имя: " + this.tracker.findAll()[count].getName() + " Desc: " + this.tracker.findAll()[count].getDecs() + " ------------");
+            String str = String.format("------------ name: %s, desc: %s ------------ " , this.tracker.findAll()[count].getName() , this.tracker.findAll()[count].getDecs());
+            System.out.println(str);
         }
     }
 
