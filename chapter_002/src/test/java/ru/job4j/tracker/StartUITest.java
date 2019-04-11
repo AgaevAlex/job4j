@@ -43,7 +43,7 @@ public class StartUITest {
         Item item1 = tracker.add(new Item("test name1", "desc1", 1345L));
         Item item2 = tracker.add(new Item("test name2", "desc2", 1346L));
         Item item3 = tracker.add(new Item("test name3", "desc3", 1347L));
-        Input input = new StubInput(new String[]{"3", item2.getId()});
+        Input input = new StubInput(new String[]{"3", item2.getId(),"6"});
         new StartUI(input, tracker).init();
         assertThat(tracker.findAll()[1].getName(), is("test name3"));
 
@@ -58,7 +58,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         //Напрямую добавляем заявки
         Item item1 = tracker.add(new Item("test name1", "desc1", 1345L));
-        Input input = new StubInput(new String[]{"2", item1.getId(), "Alexey", "Agaev"});
+        Input input = new StubInput(new String[]{"2", item1.getId(), "Alexey", "Agaev","6"});
         new StartUI(input, tracker).init();
         assertThat(tracker.findById(item1.getId()).getName(), is("Alexey"));
     }
@@ -70,7 +70,7 @@ public class StartUITest {
     public void whenFindItemById() {
         Tracker tracker = new Tracker();
         Item item1 = tracker.add(new Item("test name1", "desc1", 1345L));
-        Input input = new StubInput(new String[]{"4", item1.getId()});
+        Input input = new StubInput(new String[]{"4", item1.getId(),"6"});
         new StartUI(input, tracker).init();
 //      Данный метод не изменяет данные в Трекере, поэтому я не знаю как его проверить.
 
