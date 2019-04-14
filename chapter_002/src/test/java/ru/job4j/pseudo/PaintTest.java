@@ -35,7 +35,7 @@ public class PaintTest {
     public void whenDrawSquare() {
         new Paint().draw(new Square());
         assertThat(
-                this.out.toString(),
+                new String(out.toByteArray()),
                 is(
                         new StringBuilder()
                                 .append("++++")

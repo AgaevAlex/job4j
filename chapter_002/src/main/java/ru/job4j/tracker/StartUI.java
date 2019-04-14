@@ -118,9 +118,13 @@ public class StartUI {
     private void showAllItems() {
         System.out.println("------------ Показать все заявки ------------");
         Item[] items = this.tracker.findAll();
+        StringBuilder pic = new StringBuilder();
         for (int count = 0; count < items.length; count++) {
-            System.out.println(String.format("------------ name: %s, desc: %s ------------ ", items[count].getName(), items[count].getDecs()));
+            pic.append("------------ name: " + items[count].getName());
+            pic.append("------------ desc: " + items[count].getDecs());
+
         }
+        System.out.println((pic.toString()));
     }
 
     /**
@@ -159,7 +163,7 @@ public class StartUI {
         System.out.println("------------ Нахождение заявки по имени --------------");
         Item[] items = tracker.findByName(this.input.ask("Введите имя заявки :"));
         for (int count = 0; count < items.length; count++) {
-            System.out.println("Заявка с данным именем найдена: name: " + items[count].getName() + " id" + items[count].getId() + " desc: " + items[count].getDecs());
+            System.out.println("Заявка с данным именем найдена: name: " + items[count].getName() + " id " + items[count].getId() + " desc: " + items[count].getDecs());
         }
     }
 
