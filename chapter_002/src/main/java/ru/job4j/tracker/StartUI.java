@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @version $Id$
@@ -46,11 +48,15 @@ public class StartUI {
      */
     public void init() {
         MenuTracker menu = new MenuTracker(this.input, this.tracker);
+        List<Integer> ranges = new ArrayList<>();
         menu.fillActions(this);
+        for (int i = 0; i < menu.getActionsLentgh(); i++) {
+            ranges.add(i);
+        }
         do {
             menu.show();
-            menu.select(Integer.valueOf(input.ask("Select:")));
-        } while (!"y".equals(this.input.ask("Exit?(y): ")) && this.working);
+            menu.select(input.ask("Select:", ranges));
+        } while (this.working);
     }
 
     public void stop() {
@@ -158,6 +164,6 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(), new Tracker()).init();
     }
 }
