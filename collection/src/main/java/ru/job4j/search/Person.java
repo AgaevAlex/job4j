@@ -7,15 +7,7 @@ public class Person {
     private String phone;
     private String adress;
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", phone='" + phone + '\'' +
-                ", adress='" + adress + '\'' +
-                '}';
-    }
+
 
     public Person(String name, String surname, String phone, String adress) {
         this.name = name;
