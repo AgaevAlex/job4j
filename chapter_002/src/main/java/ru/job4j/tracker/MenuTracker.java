@@ -64,13 +64,13 @@ public class MenuTracker {
      * Метод заполняет массив.
      */
     public void fillActions(StartUI ui) {
-        this.actions.add(new AddItem(0, "Add program"));
-        this.actions.add(new ShowItems(1, "Show all items"));
-        this.actions.add(new EditItems(2, "Edit item"));
-        this.actions.add(new DeleteItem(3, "Delete item"));
-        this.actions.add(new FindItemById(4, "Find item by Id"));
-        this.actions.add(new FindItemByName(5, "Find items by name"));
-        this.actions.add(new ExitProgram(6, "Exit Program", ui));
+        this.actions.add(new AddItem(0, "Add new Item."));
+        this.actions.add(new ShowItems(1, "Show all items."));
+        this.actions.add(new EditItems(2, "Edit item."));
+        this.actions.add(new DeleteItem(3, "Delete item."));
+        this.actions.add(new FindItemById(4, "Find item by Id."));
+        this.actions.add(new FindItemByName(5, "Find items by name."));
+        this.actions.add(new ExitProgram(6, "Exit Program.", ui));
     }
 
 
@@ -105,15 +105,13 @@ public class MenuTracker {
         @Override
         public void execute(Input input, Tracker tracker) {
             System.out.println("------------ Показать все заявки ------------");
-            Item[] items = tracker.findAll();
+            List<Item> items = tracker.findAll();
             StringBuilder pic = new StringBuilder();
-            for (int count = 0; count < items.length; count++) {
-                pic.append("------------ name: " + items[count].getName());
-                pic.append("------------ desc: " + items[count].getDecs());
-
+            for (int count = 0; count < items.size(); count++) {
+                pic.append("------------ name: " + items.get(count).getName());
+                pic.append("------------ desc: " + items.get(count).getDecs());
             }
-            System.out.println((pic.toString()));
-
+            System.out.println(pic.toString());
         }
     }
 
@@ -187,9 +185,9 @@ public class MenuTracker {
         @Override
         public void execute(Input input, Tracker tracker) {
             System.out.println("------------ Нахождение заявки по имени --------------");
-            Item[] items = tracker.findByName(input.ask("Введите имя заявки :"));
-            for (int count = 0; count < items.length; count++) {
-                System.out.println("Заявка с данным именем найдена: name: " + items[count].getName() + " id " + items[count].getId() + " desc: " + items[count].getDecs());
+            List<Item> items = tracker.findByName(input.ask("Введите имя заявки :"));
+            for (int count = 0; count < items.size(); count++) {
+                System.out.println("Заявка с данным именем найдена: name: " + items.get(count).getName() + " id " + items.get(count).getId() + " desc: " + items.get(count).getDecs());
             }
         }
     }
