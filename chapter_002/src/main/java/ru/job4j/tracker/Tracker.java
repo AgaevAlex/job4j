@@ -41,8 +41,8 @@ public class Tracker {
         boolean result = false;
         for (int count = 0; count < this.items.size(); count++) {
             if (this.items != null && this.items.get(count).getId().equals(id)) {
+                item.setId(id);
                 this.items.set(count, item);
-                this.items.get(count).setId(id);
                 result = true;
                 break;
             }
