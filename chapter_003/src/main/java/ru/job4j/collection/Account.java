@@ -7,6 +7,13 @@ public class Account {
     private String username;
     private String deposit;
 
+    public Account(String passport, String username, String deposit) {
+
+        this.passport = passport;
+        this.username = username;
+        this.deposit = deposit;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -29,10 +36,5 @@ public class Account {
                 '}';
     }
 
-    public Account(String passport, String username, String deposit) {
 
-        this.passport = passport;
-        this.username = username;
-        this.deposit = deposit;
-    }
 }
