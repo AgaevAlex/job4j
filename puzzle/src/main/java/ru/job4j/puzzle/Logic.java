@@ -89,7 +89,8 @@ public class Logic {
                 result = true;
                 break;
             } else {
-                count = count1 = 0;
+                count = 0;
+                count1 = 0;
             }
         }
         return result;
