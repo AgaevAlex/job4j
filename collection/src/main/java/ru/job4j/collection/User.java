@@ -29,7 +29,7 @@ public class User implements Comparable<User> {
     public int hashCode() {
         return Objects.hash(name, age);
     }
-
+//refactor compareTo
     @Override
     public int compareTo(User o) {
         if (this.name.equals(o.name)) {
