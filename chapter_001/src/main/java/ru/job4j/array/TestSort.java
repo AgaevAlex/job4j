@@ -13,8 +13,9 @@ public class TestSort {
         int i = first.length - 1;
         int j = second.length - 1;
         int k = result.length;
-        while (k > 0)
+        while (k > 0) {
             result[--k] = (j < 0 || (i >= 0 && first[i] >= second[j])) ? first[i--] : second[j--];
+        }
         return result;
     }
 }

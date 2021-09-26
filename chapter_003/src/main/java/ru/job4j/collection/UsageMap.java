@@ -9,11 +9,11 @@ public class UsageMap {
         map.put("parsentev@yandex.ru", "Petr Arsentev");
         map.put("orskpro@gmail.com", "Alexey Agaev");
 
-        for (String key: map.keySet()){
+        for (String key : map.keySet()) {
             String value = map.get(key);
             System.out.println(key + " = " + value);
         }
-        for (Map.Entry<String, String> entry : map.entrySet()){
+        for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
             System.out.println(key + " = " + value);
