@@ -30,15 +30,10 @@ public class User implements Comparable<User> {
         return Objects.hash(name, age);
     }
 
-    /**
-     * Как вариант можно было изменить тип age на Integer
-     * и записать this.age.compareTo(o.age);
-     * либо использовать Comparator.comparing
-     */
     @Override
     public int compareTo(User o) {
         if (this.name.equals(o.name)) {
-            Integer.compare(this.age, o.age);
+            return Integer.compare(this.age, o.age);
         }
         return this.name.compareTo(o.name);
 
